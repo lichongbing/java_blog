@@ -1,14 +1,22 @@
 server:
-    port: 80
     use-forward-headers: true
     undertow:
         io-threads: 2
         worker-threads: 32
         buffer-size: 1024
         directBuffers: true
+    ssl:
+        key-store: 3226093_blog.lichongbing.com.pfx
+        key-store-password: qsVrmBuh  #pfx-password.txt中复制出来的密码
+        keyStoreType: PKCS12
+        enabled: true
+    port: 443
+
+http:
+    port: 80
 spring:
     profiles:
-        active: @profileActive@
+        active: mysql
     devtools:
         enabled: true
     cache:
@@ -71,7 +79,7 @@ site:
         # 注册开关
         register: true
         # 注册开启邮箱验证
-        register_email_validate: false
+        register_email_validate: true
         # 发布文章开关
         post: true
         # 评论开关

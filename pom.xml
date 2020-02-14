@@ -4,7 +4,10 @@
 	<groupId>com.mtons.mblog</groupId>
 	<artifactId>mblog</artifactId>
 	<version>latest</version>
+
+	<!-- springboot项目独立部署到tomcat <packaging>jar</packaging> -->
 	<packaging>jar</packaging>
+	<!--	<packaging>war</packaging>-->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -228,6 +231,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<!--		<dependency>-->
+
+		<!--			<groupId>org.springframework.boot</groupId>-->
+
+		<!--			<artifactId>spring-boot-starter-tomcat</artifactId>-->
+
+		<!--			<scope>provided</scope>-->
+
+		<!--		</dependency>-->
+		<dependency>
+
+			<groupId>org.apache.tomcat.embed</groupId>
+
+			<artifactId>tomcat-embed-core</artifactId>
+
 		</dependency>
 
 		<dependency>
